@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+<!-- MENU -->
+<div class="menu active" id="menu">
+    <div class="menu-content">
+        <div class="menu-logo">
+            <img src="./images/Group 2.svg" alt="Logo">
+        </div>
+
+        <div class="pick-player">
+            <div class="pick-player-title">Pick Player 1's Mark</div>
+            <div class="player-toggle">
+                <button class="toggle-btn active" data-mark="X">X</button>
+                <button class="toggle-btn" data-mark="O">O</button>
+            </div>
+            <div class="pick-player-title" style="opacity: 50%;">REMEMBER : X GOES FIRST</div>
+        </div>
+
+        <button class="game-mode-btn new-game-cpu">New Game (vs CPU)</button>
+        <button class="game-mode-btn new-game-player">New Game (vs Player)</button>
+    </div>
+</div>
+
+<!-- GAME -->
+<div class="container" id="gameContainer" style="display:none;">
+    <div class="header">
+        <div class="logo">
+            <span class="x-icon">X</span>
+            <span class="o-icon">O</span>
+        </div>
+
+        <div class="turn-indicator">
+            <span class="icon" id="turnIcon">X</span>
+            <span>TURN</span>
+        </div>
+
+        <button class="restart-btn" id="restartBtn">⟲</button>
+    </div>
+
+    <div class="board">
+        <button class="cell" data-index="0"></button>
+        <button class="cell" data-index="1"></button>
+        <button class="cell" data-index="2"></button>
+        <button class="cell" data-index="3"></button>
+        <button class="cell" data-index="4"></button>
+        <button class="cell" data-index="5"></button>
+        <button class="cell" data-index="6"></button>
+        <button class="cell" data-index="7"></button>
+        <button class="cell" data-index="8"></button>
+    </div>
+
+    <div class="score-board">
+        <div class="score-box x-score">
+            <div class="score-label" id="xLabel">X (You)</div>
+            <div class="score-value" id="scoreX">0</div>
+        </div>
+        <div class="score-box tie-score">
+            <div class="score-label">Ties</div>
+            <div class="score-value" id="scoreTie">0</div>
+        </div>
+        <div class="score-box o-score">
+            <div class="score-label" id="oLabel">O (CPU)</div>
+            <div class="score-value" id="scoreO">0</div>
+        </div>
+    </div>
+</div>
+
+<!-- RESULT MODAL -->
+<div class="modal" id="resultModal">
+    <div class="modal-content">
+        <div class="modal-message" id="modalMessage"></div>
+        <div class="modal-winner" id="modalWinner"></div>
+        <div class="modal-buttons">
+            <button class="modal-btn quit-btn" id="quitBtn">Quit</button>
+            <button class="modal-btn next-round-btn" id="nextRoundBtn">Next Round</button>
+        </div>
+    </div>
+</div>
+
+<!-- RESTART MODAL -->
+<div class="modal" id="restartModal">
+    <div class="modal-content">
+        <div class="modal-winner">
+            <span class="modal-winner-text tie">Restart Game?</span>
+        </div>
+        <div class="modal-buttons">
+            <button class="modal-btn quit-btn" id="cancelRestartBtn">No</button>
+            <button class="modal-btn next-round-btn" id="confirmRestartBtn">Yes</button>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
